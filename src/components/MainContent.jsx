@@ -1,8 +1,13 @@
+import { content } from "../data/content";
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
+
 export function MainContent() {
+  const { language } = useContext(LanguageContext);
   return (
     <main>
-      <h2>Hallo</h2>
-      <p>Ich bin der Content</p>
+      <h2>{content[language].title}</h2>
+      <p>{content[language].description}</p>
     </main>
   );
 }
